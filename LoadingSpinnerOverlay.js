@@ -76,6 +76,11 @@ class LoadingSpinnerOverlay extends Component {
         this._loadingSpinnerAnimationToggle = null
     }
 
+    componentWillReceiveProps(nextProps) {
+        const { visible} = nextProps;
+        this.setState({ visible});
+    }
+
     render() {
         let loadingSpinner = this._renderLoadingSpinner()
         return this._renderOverLay(loadingSpinner)
